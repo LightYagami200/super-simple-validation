@@ -1,23 +1,48 @@
 ### Installation
 
 ```bash
-$ npm install --save super-simple-encryption
+$ npm install --save super-simple-validation
 ```
 
 or if you prefer yarn
 
 ```bash
-$ yarn add super-simple-encryption
+$ yarn add super-simple-validation
 ```
 
 ### Usage
 
 ```typescript
-import { SuperSimpleEncryption } from "super-simple-encryption";
+import { isEmail } from "super-simple-validation";
 
-const enc = new SuperSimpleEncryption("32 digit key");
+console.log(isEmail('some-email@example.com')); // true
+```
 
-const encrypted = enc.encrypt("Hello World"); // returns encrypted string
+### API
 
-const decrypted = enc.decrypt(encrypted); // returns decrypted string
+#### is-email
+Validates if the given string is an email address.
+
+```typescript
+const valid = isEmail('user@example.com');
+
+console.log(valid); // true
+```
+
+#### is-phone
+Validates if the given string is a phone number.
+
+```typescript
+const valid = isPhone('+8612345678901');
+
+console.log(valid); // true
+```
+
+#### is-hex-color
+Validates if the given string is a hex color.
+
+```typescript
+const valid = isHexColor('#ffffff');
+
+console.log(valid); // true
 ```
