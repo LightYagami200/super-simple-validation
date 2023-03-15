@@ -59,3 +59,20 @@ const valid = isHexColor("#ffffff");
 
 console.log(valid); // true
 ```
+
+#### is-css-color
+
+Validates if the given string is a CSS color.
+
+```typescript
+const valid =
+  isCssColor("rgb(255, 255, 255)") &&
+  isCssColor("rgba(255, 255, 255, 1)") &&
+  isCssColor("hsl(0, 0%, 100%)") &&
+  isCssColor("hsla(0, 0%, 100%, 1)") &&
+  isCssColor("hwb(0, 0%, 0%)") &&
+  isCssColor("blue") &&
+  isCssColor("transparent");
+
+console.log(valid); // true
+```

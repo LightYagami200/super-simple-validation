@@ -1,6 +1,6 @@
 // Imports
 import { describe, test, expect } from '@jest/globals';
-import { isEmail, isPhone, isHexColor, isUrl } from '../index';
+import { isEmail, isPhone, isHexColor, isUrl, isCssColor } from '../index';
 
 // Test Suite
 describe('Validation', () => {
@@ -32,4 +32,24 @@ describe('Validation', () => {
   test('Is url? (bad url)', () => expect(isUrl('example')).toBe(false));
 
   test('Is url? (bad url)', () => expect(isUrl('example-.com')).toBe(false));
+
+  test('Is css color? (Good css color)', () => expect(isCssColor('red')).toBe(true));
+
+  test('Is css color? (Good css color)', () => expect(isCssColor('rgb(255, 0, 0)')).toBe(true));
+
+  test('Is css color? (Good css color)', () => expect(isCssColor('rgba(255, 0, 0, 0.5)')).toBe(true));
+
+  test('Is css color? (Good css color)', () => expect(isCssColor('hsl(0, 100%, 50%)')).toBe(true));
+
+  test('Is css color? (Good css color)', () => expect(isCssColor('hsla(0, 100%, 50%, 0.5)')).toBe(true));
+
+  test('Is css color? (Good css color)', () => expect(isCssColor('#000000')).toBe(true));
+
+  test('Is css color? (Good css color)', () => expect(isCssColor('#000000aa')).toBe(true));
+
+  test('Is css color? (Bad css color)', () => expect(isCssColor('000000')).toBe(false));
+
+  test('Is css color? (Bad css color)', () => expect(isCssColor('000000aa')).toBe(false));
+
+  test('Is css color? (Bad css color)', () => expect(isCssColor('rgb(255, 0, 0')).toBe(false));
 });
