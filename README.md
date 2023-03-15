@@ -76,3 +76,13 @@ const valid =
 
 console.log(valid); // true
 ```
+
+#### is-discord-id
+
+Validates if the given string is a Discord ID.
+
+```typescript
+const valid = isDiscordId("973608903801708634");
+
+console.log(valid); // true
+```

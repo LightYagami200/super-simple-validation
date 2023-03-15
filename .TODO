@@ -6,7 +6,6 @@ is-iban
 is-eth-address
 is-btc-address
 is-sol-address
-is-discord-id
 is-discord-bot-token (Optional parameter that lets you check if bot token is valid by making a request to Discord API)
 is-discord-invite
 is-discord-tag (Username + Discriminator e.g. "John#1234")

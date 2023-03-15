@@ -1,6 +1,6 @@
 // Imports
 import { describe, test, expect } from '@jest/globals';
-import { isEmail, isPhone, isHexColor, isUrl, isCssColor } from '../index';
+import { isEmail, isPhone, isHexColor, isUrl, isCssColor, isDiscordId } from '../index';
 
 // Test Suite
 describe('Validation', () => {
@@ -52,4 +52,10 @@ describe('Validation', () => {
   test('Is css color? (Bad css color)', () => expect(isCssColor('000000aa')).toBe(false));
 
   test('Is css color? (Bad css color)', () => expect(isCssColor('rgb(255, 0, 0')).toBe(false));
+
+  test('Is discord id? (Good discord id)', () => expect(isDiscordId('973608903801708634')).toBe(true));
+
+  test('Is discord id? (Bad discord id)', () => expect(isDiscordId('xyz')).toBe(false));
+
+  test('Is discord id? (Bad discord id)', () => expect(isDiscordId('12357498')).toBe(false));
 });
