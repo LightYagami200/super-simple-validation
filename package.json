@@ -11,7 +11,7 @@
     "test": "jest"
   },
   "name": "super-simple-validation",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A super simple library for validating data",
   "main": "dist/index.js",
   "repository": "https://github.com/LightYagami200/super-simple-validation",

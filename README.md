@@ -86,3 +86,13 @@ const valid = isDiscordId("973608903801708634");
 
 console.log(valid); // true
 ```
+
+#### is-date-time
+
+Validates if the given string is a date time.
+
+```typescript
+const valid = isDateTime("2021-10-01T00:00:00.000Z");
+
+console.log(valid); // true
+```

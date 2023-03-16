@@ -1,6 +1,6 @@
 // Imports
 import { describe, test, expect } from '@jest/globals';
-import { isEmail, isPhone, isHexColor, isUrl, isCssColor, isDiscordId } from '../index';
+import { isEmail, isPhone, isHexColor, isUrl, isCssColor, isDiscordId, isDateTime } from '../index';
 
 // Test Suite
 describe('Validation', () => {
@@ -58,4 +58,11 @@ describe('Validation', () => {
   test('Is discord id? (Bad discord id)', () => expect(isDiscordId('xyz')).toBe(false));
 
   test('Is discord id? (Bad discord id)', () => expect(isDiscordId('12357498')).toBe(false));
+
+  test('Is date time? (Good date time)', () => expect(isDateTime('2021-01-01T00:00:00.000Z')).toBe(true));
+
+  test('Is date time? (Good date time)', () => expect(isDateTime('10 Jan 2022')).toBe(true));
+
+  test('Is date time? (Bad date time)', () => expect(isDateTime('maybe 10th of jan?')).toBe(false));
+
 });
