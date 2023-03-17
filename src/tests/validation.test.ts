@@ -1,6 +1,6 @@
 // Imports
 import { describe, test, expect } from '@jest/globals';
-import { isEmail, isPhone, isHexColor, isUrl, isCssColor, isDiscordId, isDateTime } from '../index';
+import { isEmail, isPhone, isHexColor, isUrl, isCssColor, isDiscordId, isDateTime, isCCNumber } from '../index';
 
 // Test Suite
 describe('Validation', () => {
@@ -65,4 +65,15 @@ describe('Validation', () => {
 
   test('Is date time? (Bad date time)', () => expect(isDateTime('maybe 10th of jan?')).toBe(false));
 
+  test('Is credit card number? (Mastercard)', () => expect(isCCNumber('5555555555554444')).toBe(true));
+
+  test('Is credit card number? (Visa with spaces)', () => expect(isCCNumber('4111 1111 1111 1111')).toBe(true));
+
+  test('Is credit card number? (AMEX with dashes)', () => expect(isCCNumber('3782-822463-10005')).toBe(true));
+
+  test('Is credit card number? (Bad credit card number)', () => expect(isCCNumber('1234567890123456')).toBe(false));
+
+  test('Is credit card number? (Good lunh)', () => expect(isCCNumber('4539 1488 0343 6467', true)).toBe(true));
+
+  test('Is credit card number? (Bad lunh)', () => expect(isCCNumber('2720 9919 5662 0573', true)).toBe(false));
 });

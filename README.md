@@ -96,3 +96,22 @@ const valid = isDateTime("2021-10-01T00:00:00.000Z");
 
 console.log(valid); // true
 ```
+
+#### is-cc-number
+
+Validates if the given string is a credit card number.
+
+Strings with spaces and dashes are also supported.
+
+Use `true` in second parameter to validate the the number with the Luhn algorithm. (More info: https://en.wikipedia.org/wiki/Luhn_algorithm)
+
+```typescript
+const valid = isCcNumber("4539 1488 0343 6467");
+
+console.log(valid); // true
+
+// Optionally use true in the second parameter to validate the Luhn algorithm
+const validWithLuhn = isCcNumber("4539 1488 0343 6467", true);
+
+console.log(validWithLuhn); // true
+```
