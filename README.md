@@ -115,3 +115,13 @@ const validWithLuhn = isCcNumber("4539 1488 0343 6467", true);
 
 console.log(validWithLuhn); // true
 ```
+
+#### is-cc-exp
+
+Validates if the given string is a credit card expiration date.
+
+```typescript
+const valid = isCcExp("10/25");
+
+console.log(valid); // true
+```
