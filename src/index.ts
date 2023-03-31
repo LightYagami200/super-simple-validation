@@ -8,3 +8,4 @@ export { default as isDiscordId } from './utils/is-discord-id';
 export { default as isDateTime } from './utils/is-date-time';
 export { default as isCCNumber } from './utils/is-cc-number';
 export { default as isCCExp } from './utils/is-cc-exp';
+export { default as isCCCVV } from './utils/is-cc-cvv';

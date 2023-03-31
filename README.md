@@ -125,3 +125,13 @@ const valid = isCcExp("10/25");
 
 console.log(valid); // true
 ```
+
+#### is-cc-cvv
+
+Validates if the given string is a credit card CVV.
+
+```typescript
+const valid = isCcCvv("123");
+
+console.log(valid); // true
+```

@@ -1,6 +1,6 @@
 // Imports
 import { describe, test, expect } from '@jest/globals';
-import { isEmail, isPhone, isHexColor, isUrl, isCssColor, isDiscordId, isDateTime, isCCNumber, isCCExp } from '../index';
+import { isEmail, isPhone, isHexColor, isUrl, isCssColor, isDiscordId, isDateTime, isCCNumber, isCCExp, isCCCVV } from '../index';
 
 // Test Suite
 describe('Validation', () => {
@@ -82,4 +82,12 @@ describe('Validation', () => {
   test('Is credit card expiration? (Good expiration)', () => expect(isCCExp('01/2022')).toBe(true));
 
   test('Is credit card expiration? (Bad expiration)', () => expect(isCCExp('01/202')).toBe(false));
+
+  test('Is credit card cvv? (Good cvv)', () => expect(isCCCVV('123')).toBe(true));
+
+  test('Is credit card cvv? (Good cvv)', () => expect(isCCCVV('1234')).toBe(true));
+
+  test('Is credit card cvv? (Bad cvv)', () => expect(isCCCVV('12')).toBe(false));
+
+  test('Is credit card cvv? (Bad cvv)', () => expect(isCCCVV('12345')).toBe(false));
 });
